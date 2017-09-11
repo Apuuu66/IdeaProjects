@@ -25,7 +25,7 @@
     hashMap.put("r2","k2");
     hashMap.put("r3","k3");
     request.setAttribute("map",hashMap);
-
+    request.setAttribute("arr.age","18");
 %>
 获取域中的数组：<br>
 老方式：<%=((String [])request.getAttribute("arr"))[1]%><br>
@@ -41,5 +41,9 @@ list大小：${list.size()}<br>
 <%--el方式:${map.r1}<br>--%>
 ${map.get("r1")}
 <%--${requestScope.map.r1}--%>
+<br>
+获取特殊名称:
+${requestScope["arr.age"]}
+<%=request.getAttribute("arr.age")%>
 </body>
 </html>

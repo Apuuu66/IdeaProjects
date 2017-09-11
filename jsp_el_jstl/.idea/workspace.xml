@@ -7,25 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd047e52-d6b0-4403-aa08-a718906ee979" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ApplicationServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/action/for1.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/action/forward.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/action/i1.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/action/i2.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/action/include.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/el/demo1.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/el/demo2.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/jsp/404.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/jsp/include/i1.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/jsp/include/i2.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/jsp/include/include.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/jsp/page.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../historyRecord/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../historyRecord/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../historyRecord/src/ClearHistoryServlet.java" afterPath="$PROJECT_DIR$/../historyRecord/src/ClearHistoryServlet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jsp_el_jstl.iml" afterPath="$PROJECT_DIR$/jsp_el_jstl.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.jsp" afterPath="$PROJECT_DIR$/web/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/el/demo2.jsp" afterPath="$PROJECT_DIR$/web/el/demo2.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,8 +45,8 @@
       <file leaf-file-name="demo2.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/el/demo2.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="36" column="21" lean-forward="false" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+            <state relative-caret-position="273">
+              <caret line="47" column="7" lean-forward="true" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -366,12 +351,12 @@
       <workItem from="1504803383898" duration="2908000" />
       <workItem from="1505039919850" duration="8909000" />
       <workItem from="1505108602717" duration="596000" />
-      <workItem from="1505131798168" duration="5561000" />
+      <workItem from="1505131798168" duration="6274000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19636000" />
+    <option name="totallyTimeSpent" value="20349000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -388,11 +373,11 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3410596" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32781458" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18887262" sideWeight="0.49168646" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19515885" sideWeight="0.49168646" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18887262" sideWeight="0.50831354" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -584,8 +569,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/el/demo2.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="36" column="21" lean-forward="false" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+        <state relative-caret-position="273">
+          <caret line="47" column="7" lean-forward="true" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
           <folding />
         </state>
       </provider>
