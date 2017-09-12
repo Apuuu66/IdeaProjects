@@ -26,6 +26,7 @@
     hashMap.put("r3","k3");
     request.setAttribute("map",hashMap);
     request.setAttribute("arr.age","18");
+    request.setAttribute("aaa","weq");
 %>
 获取域中的数组：<br>
 老方式：<%=((String [])request.getAttribute("arr"))[1]%><br>
@@ -45,5 +46,6 @@ ${map.get("r1")}
 获取特殊名称:
 ${requestScope["arr.age"]}
 <%=request.getAttribute("arr.age")%>
+${aaa}
 </body>
 </html>

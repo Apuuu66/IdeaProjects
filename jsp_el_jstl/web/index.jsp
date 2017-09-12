@@ -17,5 +17,6 @@
   <a href="action/include.jsp">jsp动态标签-include</a><br>
   <a href="el/demo1.jsp">el-获取简单数据</a><br>
   <a href="el/demo2.jsp">el-获取复杂数据</a><br>
+  <a href="el/demo3.jsp">el-javabean导航</a><br>
   </body>
 </html>
