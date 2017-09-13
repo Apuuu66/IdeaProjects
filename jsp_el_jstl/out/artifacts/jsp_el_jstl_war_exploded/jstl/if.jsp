@@ -19,6 +19,9 @@
     <c:out value="3不大于4"/>
 </c:if>
 <c:out value="3不大于4"/>
-<c:out value="dfwf"/>
+<hr>
+<c:if test="${3<4}">
+    dfasfefqw
+</c:if>
 </body>
 </html>

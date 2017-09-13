@@ -19,6 +19,7 @@
   <a href="el/demo2.jsp">el-获取复杂数据</a><br>
   <a href="el/demo3.jsp">el-javabean导航</a><br>
   <a href="el/demo4.jsp">el-动态获取项目名</a><br>
-  <a href="jstl/if.jsp">c-if</a>
+  <a href="jstl/if.jsp">c-if</a><br>
+  <a href="${pageContext.request.contextPath}/jstl/for1.jsp">jstl-foreach遍历List</a>
   </body>
 </html>
