@@ -11,4 +11,8 @@ public class ProductService {
     public List<Product> findAll() throws SQLException {
         return new ProductDao().findAll();
     }
+
+    public void addProduct(Product p) throws SQLException {
+         new ProductDao().addProduct(p);
+    }
 }

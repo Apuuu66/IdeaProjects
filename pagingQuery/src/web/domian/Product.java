@@ -16,10 +16,10 @@ public class Product {
 
     private String pid;
     private String pname;
-    private Double market_price;
-    private Double shop_price;
+    private String market_price;
+    private String shop_price;
     private String pimage;
-    private Date date;
+    private Date pdate;
     private String pdesc;
 
     public String getPid() {
@@ -38,19 +38,19 @@ public class Product {
         this.pname = pname;
     }
 
-    public Double getMarket_price() {
+    public String getMarket_price() {
         return market_price;
     }
 
-    public void setMarket_price(Double market_price) {
+    public void setMarket_price(String market_price) {
         this.market_price = market_price;
     }
 
-    public Double getShop_price() {
+    public String getShop_price() {
         return shop_price;
     }
 
-    public void setShop_price(Double shop_price) {
+    public void setShop_price(String shop_price) {
         this.shop_price = shop_price;
     }
 
@@ -62,12 +62,12 @@ public class Product {
         this.pimage = pimage;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getPdate() {
+        return pdate;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setPdate(Date pdate) {
+        this.pdate = pdate;
     }
 
     public String getPdesc() {
