@@ -15,4 +15,12 @@ public class ProductService {
     public void addProduct(Product p) throws SQLException {
          new ProductDao().addProduct(p);
     }
+
+    public Product getProductById(String pid) throws SQLException {
+        return new ProductDao().getProductById(pid);
+    }
+
+    public void modifyProduct(Product p) throws SQLException {
+        new ProductDao().modifyProduct(p);
+    }
 }

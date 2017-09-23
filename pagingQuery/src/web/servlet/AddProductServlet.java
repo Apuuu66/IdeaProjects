@@ -28,6 +28,8 @@ public class AddProductServlet extends HttpServlet {
             request.getRequestDispatcher("/msg.jsp").forward(request,response);
             return;
         }
+
+
         Product p = new Product();
         try {
             BeanUtils.populate(p, request.getParameterMap());

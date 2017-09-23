@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
-
 //展示所有商品
 @WebServlet(name = "FindAllServlet",urlPatterns = "/findAll")
 public class FindAllServlet extends HttpServlet {

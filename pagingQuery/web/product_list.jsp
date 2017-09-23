@@ -32,7 +32,7 @@
             <td width="8%">${p.shop_price}</td>
             <td width="8%">${p.market_price}</td>
             <td >${p.pdesc}</td>
-            <td width="8%"><a href="#">修改</a>|<a href="#">删除</a></td>
+            <td width="8%"><a href="${pageContext.request.contextPath}/getProductById?pid=${p.pid}">修改</a>|<a href="#">删除</a></td>
         </tr>
     </c:forEach>
 </table>
