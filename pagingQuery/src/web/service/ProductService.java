@@ -23,4 +23,20 @@ public class ProductService {
     public void modifyProduct(Product p) throws SQLException {
         new ProductDao().modifyProduct(p);
     }
+
+    public void deleteProductById(String pid) throws SQLException {
+        new ProductDao().deleteProductById(pid);
+    }
+
+    public void deleteManyProduct(String[] pids) throws SQLException {
+        ProductDao pdao = new ProductDao();
+        for (String pid: pids) {
+            pdao.deleteProductById(pid);
+
+        }
+    }
+
+    public List<Product> findProductByCondition(String name, String kw) throws SQLException {
+        return new ProductDao().findProductByCondition(name,kw);
+    }
 }
