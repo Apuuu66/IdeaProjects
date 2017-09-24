@@ -4,6 +4,7 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
+import org.apache.commons.dbutils.handlers.ScalarHandler;
 import web.domian.Product;
 
 import java.sql.SQLException;
@@ -53,11 +54,24 @@ public class ProductDao {
             sql+=(" and pname like ?");// pname like "%ssss%"
             params.add("%"+name+"%");
         }
-
         if(kw!=null && kw.trim().length()>0){
             sql+=(" and pdesc like ?");// pname like "%ssss%"
             params.add("%"+kw+"%");
         }
         return qr.query(sql, new BeanListHandler<>(Product.class), params.toArray());
     }
+
+    public List<Product> findProductByPage(int currPage, int pageSize) throws SQLException {
+        QueryRunner qr = new QueryRunner(new ComboPooledDataSource());
+        String sql = "select * from product limit ?,?";
+        int offset=(currPage-1)*pageSize;
+        return qr.query(sql, new BeanListHandler<>(Product.class),offset,pageSize);
+    }
+
+    public int getCount() throws SQLException {
+        QueryRunner qr = new QueryRunner(new ComboPooledDataSource());
+        String sql = "select count(*) from product";
+        return ((Long)qr.query(sql, new ScalarHandler())).intValue();
+    }
+
 }
