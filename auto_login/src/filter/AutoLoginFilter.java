@@ -5,14 +5,12 @@ import service.UserService;
 import utils.CookieUtils;
 
 import javax.servlet.*;
-import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.SQLException;
+import java.net.URLDecoder;
 
-@WebFilter(filterName = "AutoLoginFilter", urlPatterns = "/*")
+//@WebFilter(filterName = "AutoLoginFilter", urlPatterns = "/*")
 public class AutoLoginFilter implements Filter {
     public void destroy() {
     }
@@ -25,18 +23,25 @@ public class AutoLoginFilter implements Filter {
             String path = request.getRequestURI();
             System.out.println(path);
             if (!path.contains("/login")) {
-                Cookie c = CookieUtils.getCookieByName("autologin", request.getCookies());
-                if (c != null) {
-                    String username = c.getValue().split("-")[0];
-                    String password = c.getValue().split("-")[1];
-                    try {
-                         user = new UserService().login(username, password);
-                        if (user != null) {
-                           request.getSession().setAttribute("user", user);
+                try {
+                    Cookie c = CookieUtils.getCookieByName("autoLogin", request.getCookies());
+                    if (c != null) {
+                        String enName = c.getValue().split("-")[0];
+                        System.out.println(enName);
+                        String username= URLDecoder.decode(enName,"utf-8");
+                        System.out.println(username);
+                        String password = c.getValue().split("-")[1];
+                        try {
+                            user = new UserService().login(username, password);
+                            if (user != null) {
+                                request.getSession().setAttribute("user", user);
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
                         }
-                    } catch (SQLException e) {
-                        e.printStackTrace();
                     }
+
+                } catch (Exception e) {
                 }
             }
         }
