@@ -1,5 +1,8 @@
 package service;
 
+import entity.User;
+
 public interface UserService {
 
+    void regist(User user) throws Exception;
 }

@@ -6,9 +6,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "IndexServlet",urlPatterns = "/index")
+@WebServlet(name = "IndexServlet", urlPatterns = "/index")
 public class IndexServlet extends BaseServlet {
-    @Override
     public String index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         return "/jsp/index.jsp";
     }

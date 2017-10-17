@@ -1,32 +1,38 @@
 package servlet;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.lang.reflect.Method;
 
-@SuppressWarnings("all")
-@WebServlet(name = "BaseServlet")
+/**
+ * 通用的servlet
+ */
 public class BaseServlet extends HttpServlet {
     @Override
     public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            //获取子类
+            // 1.获取子类  创建子类或者调用子类的时候 this代表的是子类对象
+            @SuppressWarnings("rawtypes")
             Class clazz = this.getClass();
-            System.out.println(this);
-            //获取请求方法
-            String m = request.getParameter("method");
+            //System.out.println(this);
 
-            if(m==null){
-                m="index";
+            // 2.获取请求的方法
+            String m = request.getParameter("method");
+            if (m == null) {
+                m = "index";
             }
-            //获取方法对象
+            //System.out.println(m);
+
+            // 3.获取方法对象
             Method method = clazz.getMethod(m, HttpServletRequest.class, HttpServletResponse.class);
-            String s = (String) method.invoke(this, request, response);
-            System.out.println(s);
+
+            // 4.让方法执行 返回值为请求转发的路径
+            String s = (String) method.invoke(this, request, response);//相当于 userservlet.add(request,response)
+
+            // 5.判断s是否为空
             if (s != null) {
                 request.getRequestDispatcher(s).forward(request, response);
             }
@@ -37,7 +43,7 @@ public class BaseServlet extends HttpServlet {
     }
 
     public String index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        return null;
+        return "/jsp/index.jsp";
     }
 
 }

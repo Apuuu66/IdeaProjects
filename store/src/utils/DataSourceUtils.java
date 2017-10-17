@@ -8,7 +8,7 @@ import java.sql.Statement;
 import javax.sql.DataSource;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
-@SuppressWarnings("all")
+
 public class DataSourceUtils {
 	private static ComboPooledDataSource ds = new ComboPooledDataSource();
 	private static ThreadLocal<Connection> tl=new ThreadLocal<>();
@@ -60,9 +60,9 @@ public class DataSourceUtils {
 		}
 	}
 
+	// 释放 statement ctrl + shift + f 格式化代码
 	public static void closeStatement(Statement st) {
 		if (st != null) {
-
 			try {
 				st.close();
 			} catch (SQLException e) {
