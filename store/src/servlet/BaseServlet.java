@@ -18,20 +18,16 @@ public class BaseServlet extends HttpServlet {
             @SuppressWarnings("rawtypes")
             Class clazz = this.getClass();
             //System.out.println(this);
-
             // 2.获取请求的方法
             String m = request.getParameter("method");
             if (m == null) {
                 m = "index";
             }
             //System.out.println(m);
-
             // 3.获取方法对象
             Method method = clazz.getMethod(m, HttpServletRequest.class, HttpServletResponse.class);
-
             // 4.让方法执行 返回值为请求转发的路径
             String s = (String) method.invoke(this, request, response);//相当于 userservlet.add(request,response)
-
             // 5.判断s是否为空
             if (s != null) {
                 request.getRequestDispatcher(s).forward(request, response);

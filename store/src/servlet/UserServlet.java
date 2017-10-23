@@ -34,7 +34,7 @@ public class UserServlet extends BaseServlet {
 
         ConvertUtils.register(new MyConventer(), Date.class);
 
-        BeanUtils.populate(user,request.getParameterMap());
+        BeanUtils.populate(user, request.getParameterMap());
         user.setUid(UUIDUtils.getId());
         user.setCode(UUIDUtils.getCode());
         user.setPassword(MD5Utils.md5(user.getPassword()));
@@ -42,5 +42,18 @@ public class UserServlet extends BaseServlet {
         s.regist(user);
         request.setAttribute("msg", "用户注册成功，请去邮箱激活~~~");
         return "/jsp/msg.jsp";
+    }
+
+    public String active(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        String code = request.getParameter("code");
+        UserService s = new UserServiceImpl();
+        User user = s.active(code);
+        if (user == null) {
+            request.setAttribute("msg", "请重新激活");
+        } else {
+            request.setAttribute("msg", "激活成功");
+        }
+
+        return "jsp/msg.jsp";
     }
 }

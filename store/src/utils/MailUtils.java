@@ -36,7 +36,7 @@ public class MailUtils {
 		Authenticator auth = new Authenticator() {
 			public PasswordAuthentication getPasswordAuthentication() {
 				//设置发送人的帐号和密码
-				return new PasswordAuthentication("466007639@qq.com", "ktetoogcsomscbeb");
+				return new PasswordAuthentication("442374059@qq.com", "jlknurozgcenbgbe");
 			}
 		};
 
@@ -46,7 +46,7 @@ public class MailUtils {
 		Message message = new MimeMessage(session);
 
 		//设置发送者
-		message.setFrom(new InternetAddress("466007639@qq.com"));
+		message.setFrom(new InternetAddress("442374059@qq.com"));
 
 		//设置发送方式与接收者
 		message.setRecipient(RecipientType.TO, new InternetAddress(email));
