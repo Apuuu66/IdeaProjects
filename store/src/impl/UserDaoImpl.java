@@ -6,6 +6,8 @@ import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import utils.DataSourceUtils;
 
+import javax.sql.DataSource;
+import javax.xml.crypto.Data;
 import java.sql.SQLException;
 
 public class UserDaoImpl implements UserDao {
@@ -33,5 +35,12 @@ public class UserDaoImpl implements UserDao {
         qr.update(sql, user.getUsername(), user.getPassword(), user.getName(), user.getEmail(), user.getBirthday(),
                 user.getState(), null, user.getUid());
         System.out.println("ok");
+    }
+
+    @Override
+    public User getByUsernameAndPwd(String username, String password) throws SQLException {
+        QueryRunner qr = new QueryRunner(DataSourceUtils.getDataSource());
+        String sql = "select * from user where username = ? and password = ? limit 1";
+        return qr.query(sql, new BeanHandler<>(User.class), username, password);
     }
 }

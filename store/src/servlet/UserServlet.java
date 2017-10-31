@@ -56,4 +56,37 @@ public class UserServlet extends BaseServlet {
 
         return "jsp/msg.jsp";
     }
+
+    public String loginUI(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        return "/jsp/login.jsp";
+    }
+
+    public String login(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        password = MD5Utils.md5(password);
+        UserService s = new UserServiceImpl();
+        User user = s.login(username, password);
+        if (user == null) {
+            request.setAttribute("msg", "用户名密码不匹配");
+            return "/jsp/login.jsp";
+        } else {
+            if (1 != user.getState()) {
+                request.setAttribute("msg", "用户未激活");
+                return "jsp/login.jsp";
+            }
+
+        }
+        request.getSession().setAttribute("user", user);
+        response.sendRedirect(request.getContextPath() + "/");
+        return null;
+    }
+
+
+    public String logout(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getSession().invalidate();
+        System.out.println(request.getContextPath());
+        response.sendRedirect(request.getContextPath() + "/");
+        return null;
+    }
 }

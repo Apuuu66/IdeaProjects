@@ -14,7 +14,7 @@ public class UserServiceImpl implements UserService {
         dao.add(user);
 //        String emailMsg = "注册成功，"+"<a href='http://localhost:8080/user?method=active&code=\"+user.getCode()+\"'>点此激活</a>";
 //        String emailMsg = "注册成功，点此激活"+"http://localhost:8080/user?method=active&code="+user.getCode();
-        String emailMsg = "注册成功，点此激活" + "http://www.fionar.xyz:8080";
+        String emailMsg = "注册成功，点此激活" + "http://www.fionar.xyz";
         MailUtils.sendMail(user.getEmail(), emailMsg);
     }
 
@@ -29,5 +29,11 @@ public class UserServiceImpl implements UserService {
         user.setState(1);
         dao.update(user);
         return user;
+    }
+
+    @Override
+    public User login(String username, String password) throws Exception {
+        UserDao dao=new UserDaoImpl();
+        return dao.getByUsernameAndPwd(username,password);
     }
 }

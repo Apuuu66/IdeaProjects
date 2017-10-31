@@ -11,4 +11,6 @@ public interface UserDao {
     User getUserByCode(String code) throws SQLException;
 
     void update(User user) throws SQLException;
+
+    User getByUsernameAndPwd(String username, String password) throws SQLException;
 }
