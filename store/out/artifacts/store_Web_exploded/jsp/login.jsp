@@ -35,10 +35,10 @@ font {
  </style>
 </head>
 <body>
-	
-	
-	
-	
+
+
+
+
 			<!--
             	时间：2015-12-30
             	描述：菜单栏
@@ -98,10 +98,10 @@ font {
 				</nav>
 			</div>
 
-	
-	
-	
-	
+
+
+
+
 	
 	
 <div class="container"  style="width:100%;height:460px;background:#FF2C4C url('${pageContext.request.contextPath}/images/loginbg.jpg') no-repeat;">

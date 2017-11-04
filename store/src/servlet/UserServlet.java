@@ -85,7 +85,6 @@ public class UserServlet extends BaseServlet {
 
     public String logout(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getSession().invalidate();
-        System.out.println(request.getContextPath());
         response.sendRedirect(request.getContextPath() + "/");
         return null;
     }
