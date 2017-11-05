@@ -7,12 +7,17 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<!--
+时间：2015-12-30
+描述：菜单栏
+-->
 <div class="container-fluid">
     <div class="col-md-4">
-        <img src="${pageContext.request.contextPath}/img/logo2.png" />
+        <img src="${pageContext.request.contextPath}/img/logo2.png"/>
     </div>
     <div class="col-md-5">
-        <img src="${pageContext.request.contextPath}/img/header.png" />
+        <img src="${pageContext.request.contextPath}/img/header.png"/>
     </div>
     <div class="col-md-3" style="padding-top: 20px">
         <ol class="list-inline">
@@ -75,12 +80,12 @@
 </div>
 <script>
     $(function () {
-        $.get("${pageContext.request.contextPath}/category?method=findAll",function (data) {
-            var $ul=$("#menuId");
+        $.get("${pageContext.request.contextPath}/category?method=findAll", function (data) {
+            var $ul = $("#menuId");
             $(data).each(function () {
-                $ul.append($("<li><a href='#'>"+this.cname+"</a></li>"));
+                $ul.append($("<li><a href='#'>" + this.cname + "</a></li>"));
             });
 //                alert(data);
-        },"json");
+        }, "json");
     });
 </script>

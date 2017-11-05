@@ -1,8 +1,10 @@
 import entity.User;
+import impl.CategoryServiceImpl;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import utils.DataSourceUtils;
 
+import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -16,5 +18,7 @@ public class Test {
             User user =  list.get(i);
             System.out.println(user.getName());
         }
+        InputStream is = CategoryServiceImpl.class.getClassLoader().getResourceAsStream("ehcache.xml");
+        System.out.println(is);
     }
 }
