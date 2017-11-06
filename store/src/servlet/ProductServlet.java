@@ -29,7 +29,7 @@ public class ProductServlet extends BaseServlet {
     public String findByPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
         String cid = request.getParameter("cid");
         int currPage = Integer.parseInt(request.getParameter("currPage"));
-        int pageSize = 2;
+        int pageSize = 12;
         ProductService ps = new ProductServiceImpl();
         PageBean<Product> bean = ps.findByPage(currPage, pageSize, cid);
         request.setAttribute("pb", bean);

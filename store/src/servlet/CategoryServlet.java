@@ -4,6 +4,7 @@ import entity.Category;
 import impl.CategoryServiceImpl;
 import net.sf.json.JSONArray;
 import service.CategoryService;
+import utils.BeanFactory;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +18,8 @@ public class CategoryServlet extends BaseServlet {
 //    }
 
     public String findAll(HttpServletRequest request, HttpServletResponse response) throws Exception {
-       CategoryService cs=new CategoryServiceImpl();
+//       CategoryService cs=new CategoryServiceImpl();
+        CategoryService cs= (CategoryService) BeanFactory.getBean("CategoryService");
         List<Category> list = cs.findAll();
         String date = JSONArray.fromObject(list).toString();
         response.setContentType("text/html;charset=utf-8");
