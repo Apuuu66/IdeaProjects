@@ -1,9 +1,11 @@
 package impl;
 
 import dao.ProductDao;
+import entity.PageBean;
 import entity.Product;
 import service.ProductService;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class ProductServiceImpl implements ProductService{
@@ -17,6 +19,20 @@ public class ProductServiceImpl implements ProductService{
     public List<Product> findHot() throws Exception {
         ProductDao pdao=new ProductDaoImpl();
         return pdao.findHot();
+    }
+
+    @Override
+    public Product getByPid(String pid) throws Exception {
+        ProductDao dao =new ProductDaoImpl();
+        return dao.getByPid(pid);
+    }
+
+    @Override
+    public PageBean<Product> findByPage(int currPage, int pageSize, String cid) throws SQLException {
+        ProductDao dao =new ProductDaoImpl();
+        List<Product> list=dao.findByPage(currPage,pageSize,cid);
+        int totalCount=dao.getTotalCount(cid);
+        return new PageBean<>(list,currPage,pageSize,totalCount);
     }
 
 }

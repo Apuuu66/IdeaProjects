@@ -27,10 +27,8 @@ public class CategoryServiceImpl implements CategoryService {
             CategoryDao cd = new CategoryDaoImpl();
             list = cd.findAll();
             cache.put(new Element("clist",list));
-            System.out.println("已存入缓存");
         } else {
             list= (List<Category>) element.getObjectValue();
-            System.out.println("从缓存中读取");
         }
         return list;
     }
