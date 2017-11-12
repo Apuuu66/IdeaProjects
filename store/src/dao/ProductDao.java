@@ -14,6 +14,5 @@ public interface ProductDao {
 
     List findByPage(int currPage, int pageSize, String cid) throws SQLException;
 
-    int getTotalCount(String cid) throws SQLException;
-
+    int getTotalCount(String cid) throws Exception;
 }

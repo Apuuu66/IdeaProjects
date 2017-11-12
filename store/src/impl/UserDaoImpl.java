@@ -6,8 +6,6 @@ import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import utils.DataSourceUtils;
 
-import javax.sql.DataSource;
-import javax.xml.crypto.Data;
 import java.sql.SQLException;
 
 public class UserDaoImpl implements UserDao {

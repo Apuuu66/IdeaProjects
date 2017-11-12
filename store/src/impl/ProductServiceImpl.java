@@ -5,7 +5,6 @@ import entity.PageBean;
 import entity.Product;
 import service.ProductService;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public class ProductServiceImpl implements ProductService{
@@ -28,7 +27,7 @@ public class ProductServiceImpl implements ProductService{
     }
 
     @Override
-    public PageBean<Product> findByPage(int currPage, int pageSize, String cid) throws SQLException {
+    public PageBean<Product> findByPage(int currPage, int pageSize, String cid) throws Exception {
         ProductDao dao =new ProductDaoImpl();
         List<Product> list=dao.findByPage(currPage,pageSize,cid);
         int totalCount=dao.getTotalCount(cid);

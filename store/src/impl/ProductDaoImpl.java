@@ -41,10 +41,12 @@ public class ProductDaoImpl implements ProductDao {
     }
 
     @Override
-    public int getTotalCount(String cid) throws SQLException {
+    public int getTotalCount(String cid) throws Exception {
         QueryRunner qr = new QueryRunner(DataSourceUtils.getDataSource());
         String sql = "select count(*) from product where cid = ?";
         int count =((Long)qr.query(sql,new ScalarHandler(),cid)).intValue();
         return count;
     }
+
+
 }

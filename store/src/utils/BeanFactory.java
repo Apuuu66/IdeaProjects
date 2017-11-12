@@ -1,7 +1,6 @@
 package utils;
 
 import org.dom4j.Document;
-import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
@@ -18,11 +17,11 @@ public class BeanFactory {
         return Class.forName(value).newInstance();
     }
 
-    public static void main(String[] args) throws Exception {
-
-        System.out.println(getBean("ProductDao"));
-        System.out.println(getBean("UserDao"));
-        System.out.println(getBean("CategoryDao"));
-        System.out.println(getBean("CategoryService"));
-    }
+//    public static void main(String[] args) throws Exception {
+//
+//        System.out.println(getBean("ProductDao"));
+//        System.out.println(getBean("UserDao"));
+//        System.out.println(getBean("CategoryDao"));
+//        System.out.println(getBean("CategoryService"));
+//    }
 }

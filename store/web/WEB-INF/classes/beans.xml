@@ -4,4 +4,5 @@
     <bean id="UserDao" class="impl.UserDaoImpl"/>
     <bean id="CategoryDao" class="impl.CategoryDaoImpl"/>
     <bean id="CategoryService" class="impl.CategoryServiceImpl"/>
+    <bean id="ProductService" class="impl.ProductServiceImpl"/>
 </beans>

@@ -42,4 +42,8 @@ public class BaseServlet extends HttpServlet {
         return "/jsp/index.jsp";
     }
 
+    public String XXX(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        return null;
+    }
+
 }

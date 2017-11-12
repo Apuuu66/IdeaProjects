@@ -1,7 +1,6 @@
 package servlet;
 
 import entity.Category;
-import impl.CategoryServiceImpl;
 import net.sf.json.JSONArray;
 import service.CategoryService;
 import utils.BeanFactory;
