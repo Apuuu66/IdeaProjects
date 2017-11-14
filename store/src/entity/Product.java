@@ -73,6 +73,7 @@ public class Product implements Serializable{
 
     public void setIs_hot(Integer is_hot) {
         this.is_hot = is_hot;
+
     }
 
     public String getPdesc() {
@@ -97,5 +98,9 @@ public class Product implements Serializable{
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }

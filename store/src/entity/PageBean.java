@@ -1,8 +1,9 @@
 package entity;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class PageBean<E> {
+public class PageBean<E> implements Serializable{
     private List<E> list;
     private Integer currPage;
     private Integer pageSize;

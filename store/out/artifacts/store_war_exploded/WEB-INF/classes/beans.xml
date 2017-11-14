@@ -5,4 +5,8 @@
     <bean id="CategoryDao" class="impl.CategoryDaoImpl"/>
     <bean id="CategoryService" class="impl.CategoryServiceImpl"/>
     <bean id="ProductService" class="impl.ProductServiceImpl"/>
+    <bean id="OrderService" class="impl.OrderServiceImpl"/>
+    <bean id="OrderDao" class="impl.OrderDaoImpl"/>
+
+
 </beans>
