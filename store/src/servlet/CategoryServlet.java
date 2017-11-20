@@ -12,10 +12,6 @@ import java.util.List;
 
 @WebServlet(name = "CategoryServlet",urlPatterns = "/category")
 public class CategoryServlet extends BaseServlet {
-//    public String rr(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        return null;
-//    }
-
     public String findAll(HttpServletRequest request, HttpServletResponse response) throws Exception {
 //       CategoryService cs=new CategoryServiceImpl();
         CategoryService cs= (CategoryService) BeanFactory.getBean("CategoryService");

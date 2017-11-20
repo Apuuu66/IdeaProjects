@@ -1,21 +1,25 @@
 import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.MapHandler;
 import utils.DataSourceUtils;
 
 import java.sql.SQLException;
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.Map;
 
 public class Test {
-    public static void main(String[] args) throws SQLException {
-        QueryRunner qr=new QueryRunner(DataSourceUtils.getDataSource());
-        String sql = "select * from date";
-        Date date = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	public static void main(String[] args) throws SQLException {
+		QueryRunner qr = new QueryRunner(DataSourceUtils.getDataSource());
+		String sql = "select * from user";
+		Map<String, Object> map = qr.query(sql, new MapHandler());
+		System.out.println(map.get("sex"));
+		System.out.println(map.get("state"));
+		System.out.println(1);
+//        String sql = "select * from date";
+//        Date date = new Date();
+//		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 //        String s = sdf.format(date);
 //        System.out.println(s);
-        Timestamp s = new Timestamp(new Date().getTime());
-        System.out.println(s.toString());
+//        Timestamp s = new Timestamp(new Date().getTime());
+//        System.out.println(s.toString());
 //        qr.update("insert date values(?)",s);
 //
 //        List<User> list=qr.query(sql, new BeanListHandler<>(User.class));
@@ -32,7 +36,7 @@ public class Test {
 //        System.out.println(date1);
 //        System.out.println(timestamp);
 
-        // util.date转换成sql.date
+		// util.date转换成sql.date
 //        java.util.Date utilDate = new java.util.Date();    //获取当前时间
 //        System.out.println(utilDate);
 //        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
@@ -45,5 +49,5 @@ public class Test {
 //        System.out.println(utilDate1);
 
 
-    }
+	}
 }

@@ -14,10 +14,7 @@ public class BaseServlet extends HttpServlet {
     @Override
     public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            // 1.获取子类  创建子类或者调用子类的时候 this代表的是子类对象
-            @SuppressWarnings("rawtypes")
             Class clazz = this.getClass();
-            //System.out.println(this);
             // 2.获取请求的方法
             String m = request.getParameter("method");
             if (m == null) {

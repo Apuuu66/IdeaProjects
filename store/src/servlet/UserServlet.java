@@ -11,12 +11,10 @@ import utils.UUIDUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Date;
-import java.util.UUID;
 
 @WebServlet(name = "UserServlet", urlPatterns = "/user")
 public class UserServlet extends BaseServlet {
@@ -64,6 +62,7 @@ public class UserServlet extends BaseServlet {
     public String login(HttpServletRequest request, HttpServletResponse response) throws Exception {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+
         password = MD5Utils.md5(password);
         UserService s = new UserServiceImpl();
         User user = s.login(username, password);

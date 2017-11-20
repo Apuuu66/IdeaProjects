@@ -67,4 +67,24 @@ public class OrderServlet extends BaseServlet {
         request.getSession().removeAttribute("cart");
         return "/jsp/order_info.jsp";
     }
+/**
+  *description: 分页查询我的订单
+  *return:
+  */
+    public String findAllByPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        Integer currPage = Integer.parseInt(request.getParameter("currPage"));
+        if (currPage==null){
+            currPage=1;
+        }
+        int pageSize=3;
+        User user = (User) request.getSession().getAttribute("user");
+        if (user == null) {
+            request.setAttribute("msg","您还没有登录，请先登录");
+            return "/jsp/msg.jsp";
+        }
+        OrderService os= (OrderService) BeanFactory.getBean("OrderService");
+        PageBean<Order> bean=os.findAllByPage(currPage,pageSize,user);
+        request.setAttribute("pb",bean);
+        return "/jsp/order_list.jsp";
+    }
 }

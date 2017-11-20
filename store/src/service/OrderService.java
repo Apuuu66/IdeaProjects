@@ -1,6 +1,8 @@
 package service;
 
 import entity.Order;
+import entity.PageBean;
+import entity.User;
 
 /**
  * Created by IntelliJ IDEA.
@@ -10,4 +12,6 @@ import entity.Order;
  */
 public interface OrderService {
     void add(Order order) throws Exception;
+
+    PageBean<Order> findAllByPage(Integer currPage, int pageSize, User user) throws Exception;
 }
